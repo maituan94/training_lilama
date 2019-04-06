@@ -1,0 +1,63 @@
+body{
+    background: antiquewhite;
+}
+#text-title-school{
+    text-shadow: 3px 3px 10px #000000;
+}
+.layout{
+    display: flex;
+    margin-top: 20px;
+}
+
+.layout .thediv{
+    height: 40px;
+    width: 33.33%;
+    margin-left: 10px;
+    background: #000000;
+    color: #ffffff;
+    font-size:20px;
+    display: flex;
+    align-items: center;
+}
+.layout .thediv .text-3{
+    margin: auto;
+}
+.layout .div1{
+    order: 2
+}
+
+.layout .div2{
+    order: 3
+}
+
+.layout .div3{
+    order: 1
+}
+
+.vidu{
+    height: 90px;
+    background: red;
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+
+.vidu .con_vidu_1{
+    height: 40px;
+    background: yellow;
+}
+
+.vidu .con_vidu_2{
+    height: 40px;
+    background: green;
+    margin-top: 10px;
+}
+.background-image{
+    height: 500px;
+    width: 100%;
+    background-image: linear-gradient(to right, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

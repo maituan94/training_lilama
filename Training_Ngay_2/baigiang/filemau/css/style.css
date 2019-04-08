@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+}
+
+.display_flex_center{
+    display: flex;
+    align-items: center;
+}
+
+.background {
+    background: #ccc;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.background .module {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 3px 3px 8px #a1aedc;
+}
+
+.background .module .title {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.background .module .control .inside-control {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.background .module .control .inside-control .child-two-buttons {
+    margin: auto;
+    display: flex;
+    width: fit-content;
+}
+
+.background .module .control .inside-control .child-two-buttons button {
+    min-width: 100px;
+}
+
+/* switch on off */
+.background .module .control .switch-on-off {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.switch-on-off .switch-button {
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3D(-50%, -50%, 0);
+    transform: translate3D(-50%, -50%, 0);
+    will-change: transform;
+    z-index: 197 !important;
+    cursor: pointer;
+    transition: .3s ease all;
+    border: 1px solid black;
+}
+
+.switch-on-off .switch-button-case {
+    display: inline-block;
+    background: none;
+    width: 49%;
+    height: 100%;
+    position: relative;
+    border: none;
+    transition: .3s ease all;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-bottom: 1px;
+    color: black;
+}
+
+.switch-on-off .switch-button-case:hover {
+    color: grey;
+    cursor: pointer;
+}
+
+.switch-on-off .switch-button-case:focus {
+    outline: none;
+}
+
+.switch-on-off .switch-button .active {
+    color: white;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    transition: .3s ease-out all;
+}
+
+.switch-on-off .switch-button .active-case {
+    color: white;
+}
+
+
+/* speed */
+.background .module .control .inside-control .div-speed {
+    display: flex;
+    align-items: center;
+}
+
+.background .module .control .inside-control .div-speed .label {
+    width: 50%;
+}
+
+.background .module .control .inside-control .div-speed .btn-input-speed {
+    width: 50%;
+    display: flex;
+}
+
+
+.background .module .control .inside-control.div-range {
+    margin-top: 0;
+}
+
+/* Range */
+.div-range .value {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    width: 100%;
+}
+
+.div-range .div-inside-range{
+    display: flex;
+    align-items: center;
+}
+
+.div-range .div-inside-range button{
+    width: 25%;
+    margin-left: 5%;
+    min-width: 100px;;
+}
+
+.div-range .range-input {
+    display: block;
+    -webkit-appearance: none;
+    background-color: #bdc3c7;
+    width: 70%;
+    height: 5px;
+    border-radius: 5px;
+    margin: 0 auto;
+    outline: 0;
+}
+
+.div-range .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #e74c3c;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.div-range .range-input::-webkit-slider-thumb:hover {
+    background-color: white;
+    border: 2px solid #e74c3c;
+}
+
+.div-range .range-input::-webkit-slider-thumb:active {
+    transform: scale(1.6);
+}
+
+/* Button Press and Hold */
+.button_hold {
+    background: none repeat scroll 0 0 #CB4E4E;
+    border-radius: 50%;
+    box-shadow: 0 8px #AB3C3C;
+    color: #FFFFFF;
+    width: 150px;
+    height: 150px;
+    border: 0px;
+    cursor: pointer;
+    position: relative;
+    font-size: 25px;
+    margin: 5% auto;
+    display: block;
+    outline: none;
+}
+
+
+.button_hold:hover {
+    box-shadow: 0px 5px #AB3C3C;
+    top: 2px;
+}
+
+.button_hold:active {
+    box-shadow: 0px 0px #AB3C3C;
+    top: 5px;
+    outline: none;
+}
+.button_hold:focus{
+    outline: none;
+}
+
+/* switch vertical */
+.switch {  
+    /* Background of Switch */
+    position:relative;
+    width:80px;
+    height:40px;
+    -webkit-appearance: none;
+    background: #e5e5e5;
+    outline:none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .4s;
+    box-shadow: 1px 1px 5px #999;
+  }
+  .switch.vertical{
+    transform: rotate(90deg);
+  }
+  .switch:hover {
+    background: #e7e7e7;
+  }
+  .switch:checked {
+    /* Background when Checked */
+    background: green;
+  }
+  .switch:before {
+    /* white circle */
+    content:'';
+    position:absolute;
+    top: 2.5px;
+    left: 2.5px;
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    background: #fff;
+    transition: .2s;
+  }
+  .switch:checked:before {
+    left: 42.5px;
+  }

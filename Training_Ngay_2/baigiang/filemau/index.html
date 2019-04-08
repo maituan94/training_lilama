@@ -1,0 +1,176 @@
+<!-- AWP_In_Variable Name='"webHMIData".webHMI_DO0_User' -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="module container">
+            <div class="title">Module A Controlling</div>
+            <div class="control row">
+                <div class="col-6">
+                    <div class="inside-control">
+                        <form>
+                            <!-- <input type="hidden" name='"START"' value="1" /> -->
+                            <button type="submit" name='"START"' value="1" type="button"
+                                class="btn btn-outline-success">START</button>
+
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="inside-control">
+                        <form>
+                            <!-- <input type="hidden" name='"START"' value="0" /> -->
+                            <button type="submit" name='"START"' value="0" type="button"
+                                class="btn btn-outline-danger">STOP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module container">
+            <div class="title">Module B Controlling</div>
+            <div class="control row">
+                <div class="col-6">
+                    <div class="switch-on-off">
+                        <div id="switch_on_off" class="switch-button"><span class="active"></span>
+                            <button class="switch-button-case left active-case">ON</button>
+                            <button class="switch-button-case right">OFF</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="inside-control">
+                        <div class="child-two-buttons">
+                            <form>
+                                <button type="submit" name='"START"' value="1" type="button"
+                                    class="btn btn-outline-success">ON</button>
+
+                            </form>
+                            <form>
+                                <button type="submit" name='"START"' value="0" type="button"
+                                    class="btn btn-outline-danger">STOP</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module container">
+            <div class="title">Module C Controlling</div>
+            <div class="control row">
+                <div class="col-6 display_flex_center">
+                    <div style="width:100%;" class="inside-control">
+                        <form>
+                            <div class="div-speed">
+                                <div class="label">Nhập tốc độ động cơ:</div>
+                                <div class="btn-input-speed">
+                                    <input type="number" class="form-control" name="SPEED" />
+                                    <button type="submit" type="button" class=" btn btn-primary">
+                                        Xác Nhận
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <div class="inside-control div-range">
+                        <form>
+                            <div id="Value_Range" class="value">0</div>
+                            <div class="div-inside-range">
+                                <input id="Range_Step" class="range-input" type="range" min="0" max="1300" step="1"
+                                    name="SPEED" value="90">
+                                <button type="submit" type="button" class=" btn btn-primary">
+                                    Xác Nhận
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module container">
+            <div class="title">Module D Controlling</div>
+            <div class="control row">
+                <div class="col-12">
+                    <div class="inside-control">
+                        <button class="button_hold icon_close hold_trigger">
+                            <span class="text">Press</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module container">
+            <div class="title">Module E Controlling</div>
+            <div class="control row">
+                <div class="col-12">
+                    <div class="inside-control">
+                        <input type="checkbox" class="switch">
+                        <input type="checkbox" class="switch vertical">
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+<!-- <script>
+    $(document).ready(function () {
+        $('#test').click(function () {
+            $.get(window.location.pathname + '?"START=1"', function () {
+                console.log('sss')
+            })
+        })
+    })
+</script> -->
+<script src="js/switch_on_off.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Value_Range').html($('#Range_Step').prop('value'))
+        $('#Range_Step').on('input', function (e) {
+            $('#Value_Range').html(e.target.value)
+        });
+        $('#Range_Step').change(function () {
+            console.log('Change')
+        })
+
+    })
+</script>
+<script>
+    var hold_trigger = $('.hold_trigger');
+
+    hold_trigger.mousedown(function () {
+        console.log('Mouse Down')
+    });
+    hold_trigger.mouseup(function () {
+        console.log('Mouse Up')
+    });
+
+    $('.switch').change(function () {
+        if ($(this).prop("checked") == true) {
+            console.log('1')
+        } else {
+            console.log('2')
+        }
+    })
+</script>
+
+</html>

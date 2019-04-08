@@ -1,0 +1,21 @@
+.system{
+    min-height: 100vh;
+    background: #ccc;
+    padding-top: 20px;
+}
+
+.system .module{
+    padding: 20px;
+    background: white;
+    box-shadow: 3px 3px 8px #4d72d8;
+}
+
+.system .module .title{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.inside-controller{
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+.title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+}
+.div-description{
+    display: flex;
+    align-items: start;
+}
+
+.div-description .description{
+    padding: 20px;
+    width: 25%;
+}
+@media (min-width:768px) and (max-width:1199px){
+    .title{
+        font-size: 32px;
+        color: green;
+    }
+    .div-description{
+        flex-wrap: wrap;
+    }
+    .div-description .description{
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width:767px){
+    .title{
+        font-size: 24px;
+        color: black;
+    }
+    .div-description{
+        flex-wrap: wrap;
+    }
+    .div-description .description{
+        width: calc(100% - 40px);
+    }
+}

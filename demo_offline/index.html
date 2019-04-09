@@ -142,7 +142,7 @@
     })
 
     setInterval(function(){
-        $.get("http://"+window.location.host+"/api.io",function(response){
+        $.get("http://"+window.location.host+"/awp/api.io",function(response){
             let value_all = JSON.parse(response)
             let nhuaden = value_all.nhuaden
             let nhuatrang = value_all.nhuatrang

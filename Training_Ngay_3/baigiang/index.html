@@ -18,7 +18,22 @@
 
 <body>
         <canvas id="myChart" width="400" height="400"></canvas>
+
+        <button id="id_start_dg_co">Start</button>
+
 </body>
+<script>
+    setInterval(function(){
+        $.get('/api.io',function(response){
+        let value_all = JSON.parse(response)
+
+        console.log(value_all.speed)
+        
+    })
+    },250)
+</script>
+
+
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {

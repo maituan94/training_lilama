@@ -58,10 +58,8 @@
     
 </script> -->
 <script>
-    $('#button_test').click(function(){
-        var url = window.location.pathname + '?"START"=1'
-    $.get(url,function(){})
+    $.get('/api.io',function(response){
+        console.log(response)
     })
-    
 </script>
 </html>

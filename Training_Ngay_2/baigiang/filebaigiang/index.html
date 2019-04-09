@@ -42,7 +42,26 @@
                     </div>
             </div>
         </div>
+        <div class="module container">
+                <div class="title">
+                    Thuc Hanh Jquery
+                </div>
+                <div class="inside-controller">
+                    <input id="input_test" value="100"/>
+                    <div id="content_html">Content Mẫu</div>
+                    <button id="button_test">Send</button>
+                </div>
+            </div>
     </div>
 </body>
-
+<!-- <script src="js/test.js">
+    
+</script> -->
+<script>
+    $('#button_test').click(function(){
+        var url = window.location.pathname + '?"START"=1'
+    $.get(url,function(){})
+    })
+    
+</script>
 </html>

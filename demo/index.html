@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/particles.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <img class="logo" src="http://lilama2.edu.vn/Media/Images/Linkwebsite/lilama2-logo.png" />
+            <!-- <div class="container menu-items">
+                <a href="/">Giới thiệu</a>
+                <a href="/">Tuyển Sinh</a>
+                <a href="/">Đào tạo</a>
+                <a href="/">Tin Tức</a>
+                <a href="/">Liên Hệ</a>
+            </div> -->
+        </div>
+        <div class="banner">
+            <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+            </div>
+            <div id="content_home" class="content container">
+                <div class="title">Trường Cao Đẳng Công Nghệ Quốc Tế Lilama 2</div>
+                <div class="orange-line"></div>
+                <div class="text-decription">Bài Tập Phân Loại Sản phẩm</div>
+                <div class="home_docs_btn">
+                    <button id="btn_auto" class="btn btn-outline-success">Auto</button>
+                    <button id="btn_manual" class="btn btn-outline-success">Manual</button>
+                </div>
+            </div>
+            <div id="content_auto" class="content container content_control">
+                <div class="title">Auto Controller</div>
+                <div class="row-control row">
+                    <div style="text-align: right;" class="col-6">
+                        <button id="id-auto-start" class="auto-btn btn btn-outline-success">START</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="id-auto-stop" class="auto-btn btn btn-outline-danger">STOP</button>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <div class="col-12 col-md-4 value-auto">
+                        <div class="label-auto">Nhựa Đen</div>
+                        <div class="real-val" id="value-nhua-den">0</div>
+                    </div>
+                    <div class="col-12 col-md-4 value-auto">
+                        <div class="label-auto">Nhựa Trắng</div>
+                        <div class="real-val" id="value-nhua-trang">0</div>
+                    </div>
+                    <div class="col-12 col-md-4 value-auto">
+                        <div class="label-auto">Kim Loại</div>
+                        <div class="real-val" id="value-kim-loai">0</div>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <button id="btn_back_auto" style="margin-left:auto;" class="btn btn-outline-secondary">Quay
+                        lại</button>
+                </div>
+            </div>
+            <div id="content_manual" class="content container content_control">
+                <div class="title">Manual Controller</div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 1</div>
+                    <input id="id-xy-lanh1" type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 2</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 3</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 4</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 5</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="row-control row">
+                        <button id="btn_back_manual" style="margin-left:auto;" class="btn btn-outline-secondary">Quay
+                            lại</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/app.js"></script>
+<script>
+    var url = window.location.pathname
+    $('#content_auto').hide()
+    $('#content_manual').hide()
+    function displayHome(id, status) {
+        if (status == "hide") {
+            $('#' + id).hide()
+        } else if (status == "show") {
+            $('#' + id).show()
+        }
+    }
+
+    $('#btn_auto').click(function () {
+        displayHome('content_home', 'hide')
+        displayHome('content_auto', 'show')
+    })
+
+    $('#btn_manual').click(function () {
+        displayHome('content_home', 'hide')
+        displayHome('content_manual', 'show')
+    })
+
+    $('#btn_back_auto').click(function () {
+        displayHome('content_home', 'show')
+        displayHome('content_auto', 'hide')
+    })
+
+    $('#btn_back_manual').click(function(){
+        displayHome('content_home', 'show')
+        displayHome('content_manual', 'hide')
+    })
+
+    $('#id-auto-start').click(function(){
+        $.get(url+'?"START"=1',function(){})
+    })
+
+    $('#id-auto-stop').click(function(){
+        $.get(url+'?"START"=0',function(){})
+    })
+
+    setInterval(function(){
+        $.get(window.location.host+"/awp/api.io",function(response){
+            let value_all = JSON.parse(response)
+            let nhuaden = value_all.nhuaden
+            let nhuatrang = value_all.nhuatrang
+            let kimloai = value_all.kimloai
+            $('#value-nhua-den').val(nhuaden)
+            $('#value-nhua-trang').val(nhuatrang)
+            $('#value-kim-loai').val(kimloai)
+        })
+    },10)
+
+    $('#id-xy-lanh1').change(function () {
+        // XYLANH1_MUC_1, XYLANH1_MUC_2
+        if ($(this).prop("checked") == true) {
+            $.get(url+'?"XYLANH1_MUC_1"=1&"XYLANH1_MUC_2"=0',function(){})
+        } else {
+            $.get(url+'?"XYLANH1_MUC_1"=0&"XYLANH1_MUC_2"=1',function(){})
+        }
+    })
+    $('#id-xy-lanh2').change(function () {
+        // XYLANH2_MUC_1, XYLANH2_MUC_2
+        if ($(this).prop("checked") == true) {
+            $.get(url+'?"XYLANH2_MUC_1"=1&"XYLANH2_MUC_2"=0',function(){})
+        } else {
+            $.get(url+'?"XYLANH2_MUC_1"=0&"XYLANH2_MUC_2"=1',function(){})
+        }
+    })
+    $('#id-xy-lanh3').change(function () {
+        // XYLANH3_MUC_1, XYLANH3_MUC_2
+        if ($(this).prop("checked") == true) {
+            $.get(url+'?"XYLANH3_MUC_1"=1&"XYLANH3_MUC_2"=0',function(){})
+        } else {
+            $.get(url+'?"XYLANH3_MUC_1"=0&"XYLANH3_MUC_2"=1',function(){})
+        }
+    })
+    $('#id-xy-lanh4').change(function () {
+        // XYLANH4_MUC_1, XYLANH4_MUC_2
+        if ($(this).prop("checked") == true) {
+            $.get(url+'?"XYLANH4_MUC_1"=1&"XYLANH4_MUC_2"=0',function(){})
+        } else {
+            $.get(url+'?"XYLANH4_MUC_1"=0&"XYLANH4_MUC_2"=1',function(){})
+        }
+    })
+    $('#id-xy-lanh5').change(function () {
+        // XYLANH5_MUC_1, XYLANH5_MUC_2
+        if ($(this).prop("checked") == true) {
+            $.get(url+'?"XYLANH5_MUC_1"=1&"XYLANH5_MUC_2"=0',function(){})
+        } else {
+            $.get(url+'?"XYLANH5_MUC_1"=0&"XYLANH5_MUC_2"=1',function(){})
+        }
+    })
+</script>
+
+</html>

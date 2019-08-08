@@ -8,7 +8,7 @@ var recognition = new SpeechRecognition();
 var speechRecognitionList = new SpeechGrammarList();
 speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
-recognition.lang = 'vi-VN';
+recognition.lang = 'en-US';
 recognition.interimResults = false;
 
 recognition.onresult = function(event) {

@@ -10,7 +10,7 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
-recognition.continuous = true;
+// recognition.continuous = true;
 
 var circling_flag = false
 
@@ -40,14 +40,15 @@ recognition.onerror = function(event) {
 }        
 
 $('#record').click(function(){
-    if(circling_flag == false){
-        recognition.start();
-        button_record.addClass('circling')
-        circling_flag = true
-    }else{
-        recognition.stop();
-        button_record.removeClass('circling')
-        circling_flag = false
-    }
-    
+    // if(circling_flag == false){
+    //     recognition.start();
+    //     button_record.addClass('circling')
+    //     circling_flag = true
+    // }else{
+    //     recognition.stop();
+    //     button_record.removeClass('circling')
+    //     circling_flag = false
+    // }
+    recognition.start();
+    button_record.addClass('circling')
 })

@@ -37,6 +37,24 @@ var mess_obj={
     cylin_4_other:"cylinder four",
     cylin_5:"cylinder 5",
     cylin_5_other:"cylinder five",
+
+    auto_tv="tự động",
+    auto_start_tv="bắt đầu",
+    auto_stop_tv="dừng",
+    manual_tv="bằng tay",
+    slow_speed_tv="chạy chậm",
+    high_speed_tv="chạy nhanh",
+    cy_1_tv="một",
+    cy_2_tv="hai",
+    cy_2_tv_other="hài",
+    cy_3_tv="ba",
+    cy_4_tv="bốn",
+    cy_5_tv="năm",
+    cy_1_tv_num="1",
+    cy_2_tv_num="2",
+    cy_3_tv_num="3",
+    cy_4_tv_num="4",
+    cy_5_tv_num="5",
 }
 
 // var message_json={
@@ -161,6 +179,54 @@ function voice_decode(command){
             cylinder_5()
             break;
         case mess_obj.cylin_5_other:
+            cylinder_5()
+            break;
+// vietnamese
+        case mess_obj.auto_tv:
+            displayAuto()
+            break;
+        
+        case mess_obj.auto_start_tv:
+            auto_start();   
+            break;
+        
+        case mess_obj.auto_stop_tv:
+            auto_stop();   
+            break;
+        case mess_obj.manual_tv:
+            displayManual()
+            break;
+        case mess_obj.cy_1_tv:
+            cylinder_1()
+            break;
+        case mess_obj.cy_1_tv_num:
+            cylinder_1()
+            break;
+        case mess_obj.cy_2_tv:
+            cylinder_2()
+            break;
+        case mess_obj.cy_2_tv_num:
+            cylinder_2()
+            break;
+        case mess_obj.cy_2_tv_other:
+            cylinder_2()
+            break;
+        case mess_obj.cy_3_tv:
+            cylinder_3()
+            break;
+        case mess_obj.cy_3_tv_num:
+            cylinder_3()
+            break;
+        case mess_obj.cy_4_tv:
+            cylinder_4()
+            break;
+        case mess_obj.cy_4_tv_num:
+            cylinder_4()
+            break;
+        case mess_obj.cy_5_tv:
+            cylinder_5()
+            break;
+        case mess_obj.cy_5_tv_num:
             cylinder_5()
             break;
         default:

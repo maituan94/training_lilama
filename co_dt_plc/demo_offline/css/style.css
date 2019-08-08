@@ -1,0 +1,238 @@
+body{
+}
+.header{
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    background-color: #DFDFDF;
+    top: 0;
+    display: flex;
+    z-index: 2019;
+}
+.header .logo{
+    margin-left: 20px;
+}
+
+.header .menu-items{
+    display: flex;
+    align-items: center;
+}
+.header .menu-items a{
+    color: #444b58;
+    margin-right: 20px;
+    font-size: 20px;
+}
+.header .menu-items a:hover{
+    color: #818c9e;
+}
+.banner{
+    height: calc(100vh - 80px);
+    background-image: url(../assets/image/bg.jpg);
+    width: 100%;
+    background-size: cover;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+}
+.banner .content{
+    overflow: hidden;
+    z-index: 2;
+    padding: 20px;
+}
+
+.banner .content .title{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    padding-bottom: 20px;
+    padding-top: 30px;
+}
+
+.banner .content .orange-line{
+    background: #ffc015 none repeat scroll 0 0;
+    display: block;
+    height: 2px;
+    margin: auto;
+    width: 100px;
+}
+
+.banner .content .text-decription{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    width: 75%;
+    margin: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.banner .content .home_docs_btn{
+    display: block;
+    margin: 30px auto auto;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+.banner .content .home_docs_btn a{
+    background: #ffc015;
+    border: 2px solid #ffc015;
+    border-radius: 30px;
+    color: #fff;
+    display: inline-block;
+    font-weight: 600;
+    padding: 10px 40px;
+    text-transform: capitalize;
+    transition: all 0.3s ease 0s;
+}
+
+.banner .content .home_docs_btn a:hover{
+    background: #732cf9;
+    color: #fff;
+    border: 2px solid #732cf9;
+    text-decoration: none;
+}
+
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 80px);
+    top: 80px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0) linear-gradient(rgba(4, 11, 35, 0.5), rgba(23, 29, 53, 0.8)) repeat scroll 0 0;
+}
+#particles-js canvas{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+#btn_auto,#btn_manual{
+    min-width: 100px;
+}
+
+.content_control{
+    background: #fff;
+    box-shadow: 3px 3px 10px #2f9a8b;
+}
+
+.content_control .label-title{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.row-control{
+    margin: 15px 0;
+}
+
+.auto-btn{
+    margin-left: 16px;
+    margin-right: 16px;
+    min-width: 100px;
+}
+
+.row-control .value-auto{
+    text-align: center;
+    margin-top:15px;
+}
+
+.row-control .value-auto .real-val{
+    font-weight: bold;
+    font-size: 40px;
+    color: #2666bb;
+}
+
+.row-control .value-auto .label-auto{
+    color: gray;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.switch {  
+    /* Background of Switch */
+    position:relative;
+    width:240px;
+    height:40px;
+    -webkit-appearance: none;
+    background: #e5e5e5;
+    outline:none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: .4s;
+    box-shadow: 1px 1px 5px #999;
+  }
+  .switch.vertical{
+    transform: rotate(90deg);
+  }
+  .switch:hover {
+    background: #e7e7e7;
+  }
+  .switch:checked {
+    /* Background when Checked */
+    background: green;
+  }
+  .switch:before {
+    /* white circle */
+    content:'';
+    position:absolute;
+    top: 2.5px;
+    left: 2.5px;
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    background: #fff;
+    transition: .9s;
+  }
+  .switch:checked:before {
+    left: 202.5px;
+  }
+
+  .div-xilanh{
+      display: flex;
+      align-items: center;
+      width: 400px;
+      margin: auto;
+      margin-top: 25px;
+      margin-bottom: 15px;
+  }
+  .div-xilanh .label-xilanh{
+    font-size: 25px;
+    color: gray;
+    min-width: 150px;
+  }
+.banner .content.content_control .title{
+    color: #000000;
+}
+@media (max-width:767px){
+    .banner .content .title{
+        font-size: 24px;
+    }
+
+    .banner .content{
+        padding: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .header .logo{
+        width: 100px;
+    }
+    .row-control .value-auto{
+        display: flex;
+        text-align: left;
+        align-items: center;
+    }
+    .row-control .value-auto .label-auto{
+        min-width: 120px;
+    }
+    .row-control .value-auto .real-val{
+        margin: auto;
+    }
+    .div-xilanh{
+        display: block;
+    }
+}

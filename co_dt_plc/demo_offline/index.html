@@ -1,0 +1,367 @@
+<!-- AWP_In_Variable Name='"START_WBS"' -->
+<!-- AWP_In_Variable Name='"STOP_WBS"' -->
+<!-- AWP_In_Variable Name='"RESET_WBS"' -->
+<!-- AWP_In_Variable Name='"COUNTER_1"' -->
+<!-- AWP_In_Variable Name='"COUNTER_2"' -->
+<!-- AWP_In_Variable Name='"COUNTER_3"' -->
+<!-- AWP_In_Variable Name='"CHAY_NHANH"' -->
+<!-- AWP_In_Variable Name='"CHAY_CHAM"' -->
+<!-- AWP_In_Variable Name='"XYLANH_1"' -->
+<!-- AWP_In_Variable Name='"XYLANH_2"' -->
+<!-- AWP_In_Variable Name='"XYLANH_3"' -->
+<!-- AWP_In_Variable Name='"XYLANH_4"' -->
+<!-- AWP_In_Variable Name='"XYLANH_5"' -->
+<!-- AWP_In_Variable Name='"AUTO_WBS"' -->
+<!-- AWP_In_Variable Name='"MAN_WBS"' -->
+<!-- AWP_In_Variable Name='"WHITE_OUT"' -->
+<!-- AWP_In_Variable Name='"BLACK_OUT"' -->
+<!-- AWP_In_Variable Name='"METAL_OUT"' -->
+<!-- AWP_In_Variable Name='"Set_Quantity"' -->
+<!-- AWP_In_Variable Name='"RESET ERROR AUTO"' -->
+<!-- AWP_In_Variable Name='"RESET ERROR MANUAL"' -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./library/jquery/jquery-3.3.1.min.js"></script>
+    <script src="./library/popper/popper.min.js"></script>
+    <script src="./library/bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./library/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/particles.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <img class="logo" src="./assets/logo/lilama2-logo.png" />
+            <!-- <div class="container menu-items">
+                <a href="/">Introduction</a>
+                <a href="/">Training</a>
+                <a href="/">International Cooperation</a>
+                <a href="/">Study abroad in Germany</a>
+                <a href="/">Student</a>
+            </div> -->
+        </div>
+        <div class="banner">
+            <div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;"></canvas>
+            </div>
+            <div id="content_home" class="content container">
+                <div class="title">MINISTRY OF CONSTRUCTION</div><br>
+                <div class="title">LILAMA 2 INTERNATIONAL TECHNOLOGY COLLEGE</div>
+                <div class="orange-line"></div>
+                <div class="text-decription">Bài Tập Phân Loại Sản phẩm</div>
+                <div class="home_docs_btn">
+                    <button id="btn_auto" class="btn btn-outline-success">Auto</button>
+                    <button id="btn_manual" class="btn btn-outline-success">Manual</button>
+                    <button id="btn_video" class="btn btn-outline-success"> Video</button>
+                </div>
+            </div>
+            <div id="content_auto" class="content container content_control">
+                <div class="title">Auto Controller</div>
+                <div class="row-control row">
+                    <div class="col-12" style="display: flex; justify-content: center;">
+                        <button id="id-auto-start" class="auto-btn btn btn-outline-success">START</button>
+                        <button id="id-auto-stop" class="auto-btn btn btn-outline-danger">STOP</button>
+                        <button id="id-auto-reset" class="auto-btn btn btn-outline-danger">RESET</button>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <div class="col-12 col-md-3 value-auto">
+                        <div style="position: absolute; bottom: 0;">
+                            <button type="button" class="btn btn-success" id="setBtn">SET</button>
+                            <button type="button" class="btn btn-light" id="clearBtn">CLEAR</button>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 value-auto">
+                        <div class="label-auto">White Plastic</div>
+                        <div class="real-val" id="value-nhua-trang">0</div>
+                        <input type="number" class="form-control" id="whitePlasticInput" />
+                    </div>
+                    <div class="col-12 col-md-3 value-auto">
+                        <div class="label-auto">Black Plastic</div>
+                        <div class="real-val" id="value-nhua-den">0</div>
+                        <input type="number" class="form-control" id="blackPlasticInput" />
+                    </div>
+
+                    <div class="col-12 col-md-3 value-auto">
+                        <div class="label-auto">Metal</div>
+                        <div class="real-val" id="value-kim-loai">0</div>
+                        <input type="number" class="form-control" id="metalInput" />
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <button id="btn_back_auto" style="margin-left:auto;" class="btn btn-outline-secondary">BACK</button>
+                </div>
+            </div>
+            <div id="content_manual" class="content container content_control">
+                <div class="title">Manual Controller</div>
+                <div class="label-title">Speed Controlling</div>
+                <div class="row-control row">
+                    <div style="text-align: right;" class="col-6">
+                        <button id="id-fast" class="auto-btn btn btn-outline-success">High Speed</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="id-slow" class="auto-btn btn btn-outline-danger">Slow Speed</button>
+                    </div>
+                </div>
+                <div class="label-title">Cylinder Controlling</div>
+                <div class="row-control row">
+                    <div style="text-align: right;" class="col-6">
+                        <button id="id-xylanh-1" class="auto-btn btn btn-outline-success">Cylinder 1</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="id-xylanh-2" class="auto-btn btn btn-outline-success">Cylinder 2</button>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <div style="text-align: right;" class="col-6">
+                        <button id="id-xylanh-3" class="auto-btn btn btn-outline-success">Cylinder 3</button>
+                    </div>
+                    <div class="col-6">
+                        <button id="id-xylanh-4" class="auto-btn btn btn-outline-success">Cylinder 4</button>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <div style="text-align:center;" class="col-12">
+                        <button id="id-xylanh-5" class="auto-btn btn btn-outline-success">Cylinder 5</button>
+                    </div>
+                </div>
+                <div class="row-control row">
+                    <button id="btn_back_manual" style="margin-left:auto;"
+                        class="btn btn-outline-secondary">BACK</button>
+                </div>
+                <!-- <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 1</div>
+                    <input id="id-xy-lanh1" type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 2</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 3</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 4</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="div-xilanh">
+                    <div class="label-xilanh">Xy Lanh 5</div>
+                    <input type="checkbox" class="switch">
+                </div>
+                <div class="row-control row">
+                    <button id="btn_back_manual" style="margin-left:auto;" class="btn btn-outline-secondary">BACK/button>
+                </div> -->
+            </div>
+            <div id="content_video" class="content container content_control">
+                <div class="title">Monitoring via Camera</div>
+                <iframe style="width:100%;height:450px;" src="https://www.youtube.com/watch?v=suacoExkdfY" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="row-control row">
+                    <button id="btn_back_video" style="margin-left:auto;"
+                        class="btn btn-outline-secondary">BACK</button>
+                </div>
+            </div>
+            <div class="record_div">
+                <button>RECORD</button>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./js/app.js"></script>
+<script>
+    var url = window.location.pathname // gán pathname cho url
+    var stop = ':="STOP_WBS":'       // gán biến stop cho trạng thái của nút STOP_WBS trong PLC
+    $('#content_auto').hide()
+    $('#content_manual').hide()
+    $('#content_video').hide()
+    function displayHome(id, status) {
+        if (status == "hide") {
+            $('#' + id).hide()
+        } else if (status == "show") {
+            $('#' + id).show()
+        }
+    }
+
+    $('#btn_auto').click(function () { // tạo thuộc tính cho nút nhấn auto
+        displayHome('content_home', 'hide')
+        displayHome('content_auto', 'show')
+        $.get(url + '?"AUTO_WBS"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"AUTO_WBS"=0', function () { })
+        }, 250)
+    })
+
+    $('#btn_manual').click(function () { // tạo thuộc tính cho nút nhấn manual
+        displayHome('content_home', 'hide')
+        displayHome('content_manual', 'show')
+        $.get(url + '?"MAN_WBS"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"MAN_WBS"=0', function () { })
+        }, 250)
+    })
+
+    $('#btn_back_auto').click(function () { // tạo thuộc tính cho nút nhấn trở lại phần auto
+        displayHome('content_home', 'show')
+        displayHome('content_auto', 'hide')
+        $.get(url + '?"RESET ERROR AUTO"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"RESET ERROR AUTO"=0', function () { })
+        }, 250)
+    })
+
+    $('#btn_back_manual').click(function () { // tạo thuộc tính cho nút nhấn trở lại phần manual
+        displayHome('content_home', 'show')
+        displayHome('content_manual', 'hide')
+        $.get(url + '?"RESET ERROR MANUAL"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"RESET ERROR MANUAL"=0', function () { })
+        }, 250)
+    })
+
+    $('#btn_video').click(function () {
+        displayHome('content_home', 'hide')
+        displayHome('content_video', 'show')
+    })
+
+    $('#btn_back_video').click(function () {
+        displayHome('content_home', 'show')
+        displayHome('content_video', 'hide')
+    })
+    ////////////////////////////////////////////////////
+    //tạo thuộc tính cho nút nhấn START là nút nhấn nhả
+
+    $('#id-auto-start').click(function () {
+        $.get(url + '?"START_WBS"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"START_WBS"=0', function () { })
+        }, 250)
+    })
+
+    // tạo thuộc tính cho nút chuyển đổi giữa 2 chế độ auto và manual
+    ///////////////////////////////////////////////////
+    // tạo thuộc tính cho nút DỪNG KHẨN CÂP là dạng nút nhấn giữ
+
+    $('#id-auto-stop').click(function () {
+        $.get(url + '?"STOP_WBS"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"STOP_WBS"=0', function () { })
+        }, 250)
+    })
+
+    $('#id-auto-reset').click(function () {
+        $.get(url + '?"RESET_WBS"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"RESET_WBS"=0', function () { })
+        }, 250)
+    })
+
+    $('#setBtn').click(function () {
+        $.get(url + '?"Set_Quantity"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"Set_Quantity"=0', function () { })
+        }, 250)
+    })
+
+
+    // tạo thuộc tính cho nút chuyển đổi giữa 2 chế độ auto và manual
+
+    ///////////////////////////////////////////////////
+    //  xác định thời gian lấy biến từ PLC về lưu ý là phải có file .io
+    setInterval(function () {
+        $.get(window.location.origin + "/awp/api.io", function (response) {
+            let value_all = JSON.parse(response)
+            let nhuaden = value_all.nhuaden
+            let nhuatrang = value_all.nhuatrang
+            let kimloai = value_all.kimloai
+            $('#value-nhua-den').html(nhuaden)
+            $('#value-nhua-trang').html(nhuatrang)
+            $('#value-kim-loai').html(kimloai)
+        }).fail(function (err) {
+            // console.log(err)
+        })
+    }, 1000)
+
+
+    //Manual
+    ///////////////////////////
+
+    $('#id-fast').click(function () {
+        $.get(url + '?"CHAY_NHANH"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"CHAY_NHANH"=0', function () { })
+        }, 250)
+    })
+
+    ////////
+
+    $('#id-slow').click(function () {
+        $.get(url + '?"CHAY_CHAM"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"CHAY_CHAM"=0', function () { })
+        }, 250)
+    })
+
+   
+
+    //Xylanh
+    //////////////////////////////////////////
+
+    $('#id-xylanh-1').click(function () {
+        $.get(url + '?"XYLANH_1"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"XYLANH_1"=0', function () { })
+        }, 250)
+    })
+
+    
+    ///////////////////////////////////////////////
+
+    $('#id-xylanh-2').click(function () {
+        $.get(url + '?"XYLANH_2"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"XYLANH_2"=0', function () { })
+        }, 250)
+    })
+
+   
+    ///////////////////////////////////////////////////////
+
+    $('#id-xylanh-3').click(function () {
+        $.get(url + '?"XYLANH_3"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"XYLANH_3"=0', function () { })
+        }, 250)
+    })
+
+    
+
+    ///////////////////////////////////////////////////////
+
+    $('#id-xylanh-4').click(function () {
+        $.get(url + '?"XYLANH_4"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"XYLANH_4"=0', function () { })
+        }, 250)
+    })
+
+    
+    /////////////////////////////////////////////////////
+
+    $('#id-xylanh-5').click(function () {
+        $.get(url + '?"XYLANH_5"=1', function () { })
+        setTimeout(function () {
+            $.get(url + '?"XYLANH_5"=0', function () { })
+        }, 250)
+    })
+
+  
+</script>
+<script src="./js/autoController.js"></script>
+</html>

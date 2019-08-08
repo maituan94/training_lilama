@@ -52,7 +52,7 @@
                 <div class="title">MINISTRY OF CONSTRUCTION</div><br>
                 <div class="title">LILAMA 2 INTERNATIONAL TECHNOLOGY COLLEGE</div>
                 <div class="orange-line"></div>
-                <div class="text-decription">Bài Tập Phân Loại Sản phẩm</div>
+                <div class="text-decription">Mô Hình Phân Loại Sản phẩm</div>
                 <div class="home_docs_btn">
                     <button id="btn_auto" class="btn btn-outline-success">Auto</button>
                     <button id="btn_manual" class="btn btn-outline-success">Manual</button>
@@ -169,25 +169,35 @@
             </div>
             
         </div>
-        <div id="text-record">
-            SAY.....
-        </div>
-        <div id="record" class="frame">
-            <div class="microphone">
-                <svg width="100px" height="100px" viewBox="0 0 100 100">
-                    <circle class="circle" cx="50" cy="50" r="47"/>
-                </svg>
-                <div class="icon">
-                    <div class="body">
-                        <div class="fill"></div>
+        <div class="record-area">
+            <div class="record-flex">
+                <div id="record" class="frame">
+                    <div class="microphone">
+                        <svg width="100px" height="100px" viewBox="0 0 100 100">
+                            <circle class="circle" cx="50" cy="50" r="47"/>
+                        </svg>
+                        <div class="icon">
+                            <div class="body">
+                                <div class="fill"></div>
+                            </div>
+                            <div class="foot_v"></div>
+                            <div class="foot_h"></div>
+                        </div>
+                        <div class="dots">
+                            <div class="dot dot-1"></div>
+                            <div class="dot dot-2"></div>
+                            <div class="dot dot-3"></div>
+                        </div>
                     </div>
-                    <div class="foot_v"></div>
-                    <div class="foot_h"></div>
                 </div>
-                <div class="dots">
-                    <div class="dot dot-1"></div>
-                    <div class="dot dot-2"></div>
-                    <div class="dot dot-3"></div>
+                <select id="lang_choose" class="form-control form-control-lg language_chooser">
+                        <option value="" disabled selected>Choose Voice Language</option>
+                        <option value="en-US">English</option>
+                        <option value="vi-VN">Vietnamese</option>
+                        <option value="de-DE">Germany</option>
+                </select>  
+                <div id="text-command"class="command-text">
+                    Voice Input: 
                 </div>
             </div>
         </div>
@@ -274,7 +284,6 @@
             // console.log(err)
         })
     }, 1000)
-
 
     //Manual
     ///////////////////////////

@@ -10,12 +10,22 @@ speechRecognitionList.addFromString(grammar, 1);
 recognition.grammars = speechRecognitionList;
 recognition.lang = 'en-US';
 recognition.interimResults = false;
+recognition.continuous = true;
+
+var circling_flag = false
+
+var language_chooser = $('#lang_choose')
+
+language_chooser.change(function(event){
+    console.log(event.target.value)
+    recognition.lang = event.target.value;
+})
 
 recognition.onresult = function(event) {
     var last = event.results.length - 1;
     var command = event.results[last][0].transcript.toLowerCase();
     console.log(command)
-    $('#text-record').text(command)
+    $('#text-command').text('Voice Input: '+command)
     voice_decode(command)
 };
 
@@ -30,6 +40,14 @@ recognition.onerror = function(event) {
 }        
 
 $('#record').click(function(){
-    recognition.start();
-    button_record.addClass('circling')
+    if(circling_flag == false){
+        recognition.start();
+        button_record.addClass('circling')
+        circling_flag = true
+    }else{
+        recognition.stop();
+        button_record.removeClass('circling')
+        circling_flag = false
+    }
+    
 })

@@ -167,62 +167,56 @@
                         class="btn btn-outline-secondary">BACK</button>
                 </div>
             </div>
-            <div class="record_div">
-                <button>RECORD</button>
+            
+        </div>
+        <div id="text-record">
+            SAY.....
+        </div>
+        <div id="record" class="frame">
+            <div class="microphone">
+                <svg width="100px" height="100px" viewBox="0 0 100 100">
+                    <circle class="circle" cx="50" cy="50" r="47"/>
+                </svg>
+                <div class="icon">
+                    <div class="body">
+                        <div class="fill"></div>
+                    </div>
+                    <div class="foot_v"></div>
+                    <div class="foot_h"></div>
+                </div>
+                <div class="dots">
+                    <div class="dot dot-1"></div>
+                    <div class="dot dot-2"></div>
+                    <div class="dot dot-3"></div>
+                </div>
             </div>
         </div>
-
     </div>
 </body>
 <script src="./js/app.js"></script>
+<script src="./js/function.js"></script>
+<script src="./js/voice_decode.js"></script>
 <script>
     var url = window.location.pathname // gán pathname cho url
     var stop = ':="STOP_WBS":'       // gán biến stop cho trạng thái của nút STOP_WBS trong PLC
     $('#content_auto').hide()
     $('#content_manual').hide()
     $('#content_video').hide()
-    function displayHome(id, status) {
-        if (status == "hide") {
-            $('#' + id).hide()
-        } else if (status == "show") {
-            $('#' + id).show()
-        }
-    }
 
     $('#btn_auto').click(function () { // tạo thuộc tính cho nút nhấn auto
-        displayHome('content_home', 'hide')
-        displayHome('content_auto', 'show')
-        $.get(url + '?"AUTO_WBS"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"AUTO_WBS"=0', function () { })
-        }, 250)
+        displayAuto()
     })
 
     $('#btn_manual').click(function () { // tạo thuộc tính cho nút nhấn manual
-        displayHome('content_home', 'hide')
-        displayHome('content_manual', 'show')
-        $.get(url + '?"MAN_WBS"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"MAN_WBS"=0', function () { })
-        }, 250)
+        displayManual()
     })
 
     $('#btn_back_auto').click(function () { // tạo thuộc tính cho nút nhấn trở lại phần auto
-        displayHome('content_home', 'show')
-        displayHome('content_auto', 'hide')
-        $.get(url + '?"RESET ERROR AUTO"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"RESET ERROR AUTO"=0', function () { })
-        }, 250)
+        back_from_auto()
     })
 
     $('#btn_back_manual').click(function () { // tạo thuộc tính cho nút nhấn trở lại phần manual
-        displayHome('content_home', 'show')
-        displayHome('content_manual', 'hide')
-        $.get(url + '?"RESET ERROR MANUAL"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"RESET ERROR MANUAL"=0', function () { })
-        }, 250)
+        back_from_manual()
     })
 
     $('#btn_video').click(function () {
@@ -234,14 +228,16 @@
         displayHome('content_home', 'show')
         displayHome('content_video', 'hide')
     })
+
+    
+
+    //AUTO
+
     ////////////////////////////////////////////////////
     //tạo thuộc tính cho nút nhấn START là nút nhấn nhả
 
     $('#id-auto-start').click(function () {
-        $.get(url + '?"START_WBS"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"START_WBS"=0', function () { })
-        }, 250)
+        auto_start()
     })
 
     // tạo thuộc tính cho nút chuyển đổi giữa 2 chế độ auto và manual
@@ -249,24 +245,15 @@
     // tạo thuộc tính cho nút DỪNG KHẨN CÂP là dạng nút nhấn giữ
 
     $('#id-auto-stop').click(function () {
-        $.get(url + '?"STOP_WBS"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"STOP_WBS"=0', function () { })
-        }, 250)
+        auto_stop()
     })
 
     $('#id-auto-reset').click(function () {
-        $.get(url + '?"RESET_WBS"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"RESET_WBS"=0', function () { })
-        }, 250)
+        auto_reset()
     })
 
     $('#setBtn').click(function () {
-        $.get(url + '?"Set_Quantity"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"Set_Quantity"=0', function () { })
-        }, 250)
+        btnset()
     })
 
 
@@ -293,75 +280,33 @@
     ///////////////////////////
 
     $('#id-fast').click(function () {
-        $.get(url + '?"CHAY_NHANH"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"CHAY_NHANH"=0', function () { })
-        }, 250)
+        run_fast()
     })
-
-    ////////
 
     $('#id-slow').click(function () {
-        $.get(url + '?"CHAY_CHAM"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"CHAY_CHAM"=0', function () { })
-        }, 250)
+       run_slow()
     })
-
-   
-
-    //Xylanh
-    //////////////////////////////////////////
 
     $('#id-xylanh-1').click(function () {
-        $.get(url + '?"XYLANH_1"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"XYLANH_1"=0', function () { })
-        }, 250)
+        cylinder_1()
     })
-
-    
-    ///////////////////////////////////////////////
 
     $('#id-xylanh-2').click(function () {
-        $.get(url + '?"XYLANH_2"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"XYLANH_2"=0', function () { })
-        }, 250)
+        cylinder_2()
     })
-
-   
-    ///////////////////////////////////////////////////////
 
     $('#id-xylanh-3').click(function () {
-        $.get(url + '?"XYLANH_3"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"XYLANH_3"=0', function () { })
-        }, 250)
+        cylinder_3()
     })
-
-    
-
-    ///////////////////////////////////////////////////////
 
     $('#id-xylanh-4').click(function () {
-        $.get(url + '?"XYLANH_4"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"XYLANH_4"=0', function () { })
-        }, 250)
+        cylinder_4()
     })
-
-    
-    /////////////////////////////////////////////////////
 
     $('#id-xylanh-5').click(function () {
-        $.get(url + '?"XYLANH_5"=1', function () { })
-        setTimeout(function () {
-            $.get(url + '?"XYLANH_5"=0', function () { })
-        }, 250)
-    })
-
-  
+        cylinder_5()
+    })   
 </script>
+<script src="./js/speech_recogition.js"></script>
 <script src="./js/autoController.js"></script>
 </html>

@@ -41,7 +41,7 @@ var mess_obj={
     back_manual_tv:"bằng tay trở về",
     auto_tv:"tự động",
     auto_start_tv:"bắt đầu",
-    auto_stop_tv:"dừng",
+    auto_stop_tv:"dừng lại",
     auto_stop_tv_other:"dân",
     reset_tv:"đặt lại",
     reset_tv_other:"đặc lại",

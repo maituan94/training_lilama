@@ -37,9 +37,14 @@ var mess_obj={
     cylin_4_other:"cylinder four",
     cylin_5:"cylinder 5",
     cylin_5_other:"cylinder five",
+    back_auto_tv:"tự động trở về",
+    back_manual_tv:"bằng tay trở về",
     auto_tv:"tự động",
     auto_start_tv:"bắt đầu",
     auto_stop_tv:"dừng",
+    auto_stop_tv_other:"dân",
+    reset_tv:"đặt lại",
+    reset_tv_other:"đặc lại",
     manual_tv:"bằng tay",
     slow_speed_tv:"chạy chậm",
     high_speed_tv:"chạy nhanh",
@@ -180,8 +185,15 @@ function voice_decode(command){
         case mess_obj.cylin_5_other:
             cylinder_5()
             break;
+        //vietnamese
         case mess_obj.auto_tv:
             displayAuto()
+            break;
+        case mess_obj.back_auto_tv:
+            back_from_auto()
+            break;
+        case mess_obj.back_manual_tv:
+            back_from_manual()
             break;
         case mess_obj.auto_start_tv:
             auto_start();   
@@ -189,8 +201,23 @@ function voice_decode(command){
         case mess_obj.auto_stop_tv:
             auto_stop();   
             break;
+        case mess_obj.auto_stop_tv_other:
+            auto_stop();   
+            break;
+        case mess_obj.reset_tv:
+            auto_reset();   
+            break;
+        case mess_obj.reset_tv_other:
+            auto_reset();   
+            break;
         case mess_obj.manual_tv:
             displayManual()
+            break;
+        case mess_obj.high_speed_tv:
+            run_fast()
+            break;
+        case mess_obj.slow_speed_tv:
+            run_slow()
             break;
         case mess_obj.cy_1_tv:
             cylinder_1()

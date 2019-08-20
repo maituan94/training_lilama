@@ -230,7 +230,7 @@ select {
 }
 .language_chooser{
     margin-left: 30px;
-    width: fit-content;
+    width: 200px;
     height: 40px;
     font-size: 16px;
     margin-bottom: 15px;
@@ -509,8 +509,19 @@ select {
   
 
 @media (max-width:767px){
+    .banner{
+      height: calc(100vh - 60px);
+      margin-top: 60px;
+      align-items: flex-start;
+    }
+    #particles-js{
+      height: calc(100vh - 60px);
+      top: 60px;
+    }
     .banner .content .title{
-        font-size: 24px;
+        font-size: 20px;
+        padding-bottom: 10px;
+        padding-top: 20px;
     }
 
     .banner .content{
@@ -518,8 +529,11 @@ select {
         margin-left: 10px;
         margin-right: 10px;
     }
+    .header{
+      height: 60px;
+    }
     .header .logo{
-        width: 100px;
+        width: 80px;
     }
     .row-control .value-auto{
         display: flex;
@@ -534,5 +548,82 @@ select {
     }
     .div-xilanh{
         display: block;
+    }
+    .br-class{
+      display: none;
+    }
+    .record-flex{
+      display: -webkit-flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+    .frame{
+      margin-left: 20px;
+      width: 50px;
+      height: 50px;
+    }
+    .microphone{
+      width: 50px;
+      height: 50px;
+    }
+    .microphone svg{
+      width: 50px;
+      height: 50px;
+    }
+    .microphone .icon{
+      width: 11px;
+      height: 36px;
+      top: 6px;
+      left: 20px;
+    }
+    .microphone .icon .body{
+      width: 10px;
+      height: 25px;
+    }
+    .microphone .icon .body .fill{
+      width: 4px;
+      height: 8px;
+      top: 5px;
+      left: 3px;
+    }
+    .microphone .icon .foot_v{
+      width: 4px;
+      height: 10px;
+      top: 23px;
+      left: 3px;
+    }
+    .microphone .icon .foot_h{
+      width: 12px;
+      height: 3px;
+      bottom: 0;
+      left: -1px;
+    }
+    .microphone .dots{
+      width: 25px;
+      height: 10px;
+      top: 20px;
+      left: 13px;
+    }
+    .microphone .dots .dot{
+      width: 5px;
+      height: 5px;
+    }
+    .microphone .dots .dot-2{
+      margin: 0 5px;
+    }
+    .language_chooser{
+      margin-left: 20px;
+      width: 200px;
+      height: 30px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      padding: 5px 15px;
+    }
+    .command-text{
+      margin-right: 10px;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 15px;
     }
 }
